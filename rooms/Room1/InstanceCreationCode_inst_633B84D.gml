@@ -1,0 +1,1 @@
+text = ["Whoa whoa whoa buckeroo!", "Them feet holders ain't gon help roamin 'round snake town.", "You got to peer everywhere you tread partner. Rattlers lurk 'round ev'ry nook 'n crany."]
