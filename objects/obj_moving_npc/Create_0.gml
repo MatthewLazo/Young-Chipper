@@ -1,4 +1,4 @@
-text = ["What's up motherfucker!", "I know my bean-like build may not seem so threatening...", "But I got hands like Sir Arnold!", "Who's Sir Arnold?", "Shit I don't know, I made it up on the spot."]
+text = ["Don't talk to me, or else I'll kill you!", "Please? Don't talk to me."]
 text2 = ["You want a piece of me!"]
 
 spr_walk = spr_beanboy_walk

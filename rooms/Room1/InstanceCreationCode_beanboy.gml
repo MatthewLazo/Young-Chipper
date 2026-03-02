@@ -16,7 +16,9 @@ function dialogue_end(dialogue)
 	}
 	else if (dialogue == text2)
 	{
-		instance_create_depth(x,y,depth, obj_enemy_parent)
+		var enemy = instance_create_depth(x,y,depth, obj_enemy_parent)
+		enemy.spr_idle=spr_idle
+		enemy.spr_move=spr_walk
 		instance_destroy()
 	}
 }

@@ -5,6 +5,8 @@ enum enem_state {
 	dead
 }
 
+spr_move = spr_enemy
+spr_idle = spr_enemy
 
 can_shoot = true
 
@@ -23,6 +25,7 @@ path = path_add()
 
 function shoot(pos_x, pos_y)
 {
+	effect_create_depth(depth, ef_smokeup, x,y-20,0.01,c_orange)
 	var bullet = instance_create_depth(x,y-10,depth,obj_bullet_parent)
 	bullet.owner = id
 	bullet.direction = point_direction(bullet.x,bullet.y,pos_x,pos_y)

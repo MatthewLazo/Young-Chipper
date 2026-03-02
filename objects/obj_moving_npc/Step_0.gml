@@ -1,7 +1,7 @@
 switch (state)
 {
 	case npc_state.moving:
-		if (path_position >= 1)
+		if (path_position >= 1 or distance_to_point(move_target_x, move_target_y) < 1)
 		{
 			x=move_target_x
 			y=move_target_y

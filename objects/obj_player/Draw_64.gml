@@ -22,7 +22,9 @@ else
 	// Ammo hud
 	draw_set_halign(fa_middle);
 	draw_set_valign(fa_center);
-
+	
+	if (total_ammo == 0) draw_set_colour(c_red)
+	else draw_set_colour(c_white)
 	var ammo_text_x = 150;
 	var ammo_text_y = window_get_height();
 
