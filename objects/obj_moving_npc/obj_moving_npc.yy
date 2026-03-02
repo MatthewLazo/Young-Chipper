@@ -11,8 +11,8 @@
   "name":"obj_moving_npc",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"NPCS_INTERACTABLES",
+    "path":"folders/Objects/NPCS_INTERACTABLES.yy",
   },
   "parentObjectId":{
     "name":"obj_interactable",

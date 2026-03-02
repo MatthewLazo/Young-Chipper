@@ -13,7 +13,7 @@ if (currently_talking)
 	var text_x = x1 + 32;
 	var text_y = y1 + 32;
 	
-	draw_text(text_x,text_y,  string_copy(current_text, 1, current_text_index))
+	draw_text_ext(text_x,text_y,  string_copy(current_text, 1, current_text_index), 50, window_get_width() + 150)
 	current_text_index++;
 	
 }

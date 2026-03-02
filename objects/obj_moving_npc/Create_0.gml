@@ -1,4 +1,5 @@
-text = ["hi"]
+text = ["What's up motherfucker!", "I know my bean-like build may not seem so threatening...", "But I got hands like Sir Arnold!", "Who's Sir Arnold?", "Shit I don't know, I made it up on the spot."]
+text2 = ["You want a piece of me!"]
 enum npc_state {moving, sitting}
 
 state = npc_state.sitting
@@ -14,6 +15,11 @@ function return_text()
 	if (state == npc_state.moving) return false
 	else return text
 }
+function dialogue_end(dialogue)
+{
+	
+}
+
 function begin_sprint()
 {
 	move_target_x = random_range(xstart - 50, xstart + 50)

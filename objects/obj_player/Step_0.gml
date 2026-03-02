@@ -60,14 +60,15 @@ if (keyboard_check_pressed(vk_enter))
 		
 		if (currently_talking)
 		{
-			if (current_text_line < array_length(who_is_here.text)-1)
+			if (current_text_line < array_length(currently_talking.return_text())-1)
 			{
 				current_text_line++;
-				current_text=who_is_here.text[current_text_line]
+				current_text=currently_talking.return_text()[current_text_line]
 				current_text_index=0;
 			}
 			else
 			{
+				currently_talking.dialogue_end(currently_talking.return_text())
 				currently_talking=noone
 			}
 			current_text_index=0
@@ -75,7 +76,7 @@ if (keyboard_check_pressed(vk_enter))
 		else{
 			current_text_line=0
 			currently_talking=who_is_here
-			current_text=who_is_here.text[0]
+			current_text=currently_talking.return_text()[0]
 			current_text_index=0
 		}
 	}
