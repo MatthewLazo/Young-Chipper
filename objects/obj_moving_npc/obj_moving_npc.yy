@@ -36,8 +36,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_test_npc",
-    "path":"sprites/spr_test_npc/spr_test_npc.yy",
+    "name":"spr_beanboy_walk",
+    "path":"sprites/spr_beanboy_walk/spr_beanboy_walk.yy",
   },
   "spriteMaskId":null,
   "visible":true,

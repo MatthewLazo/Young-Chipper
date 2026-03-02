@@ -1,3 +1,5 @@
+spr_idle = spr_beanboy_idle
+spr_walk = spr_beanboy_walk
 function return_text()
 {
 	if (state == npc_state.moving) return false

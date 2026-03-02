@@ -1,5 +1,9 @@
 text = ["What's up motherfucker!", "I know my bean-like build may not seem so threatening...", "But I got hands like Sir Arnold!", "Who's Sir Arnold?", "Shit I don't know, I made it up on the spot."]
 text2 = ["You want a piece of me!"]
+
+spr_walk = spr_beanboy_walk
+spr_idle = spr_beanboy_walk
+
 enum npc_state {moving, sitting}
 
 state = npc_state.sitting

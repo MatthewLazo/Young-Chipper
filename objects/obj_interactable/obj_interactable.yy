@@ -8,8 +8,8 @@
   "name":"obj_interactable",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"NPCS_INTERACTABLES",
+    "path":"folders/Objects/NPCS_INTERACTABLES.yy",
   },
   "parentObjectId":null,
   "persistent":false,

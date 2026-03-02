@@ -1,8 +1,8 @@
 {
   "$GMSprite":"v2",
-  "%Name":"spr_test_npc",
+  "%Name":"spr_beanboy_walk",
   "bboxMode":0,
-  "bbox_bottom":29,
+  "bbox_bottom":31,
   "bbox_left":6,
   "bbox_right":27,
   "bbox_top":0,
@@ -23,19 +23,19 @@
     {"$GMImageLayer":"","%Name":"a5af8d5c-0c2b-41dd-a089-ef57bcff560b","blendMode":0,"displayName":"default","isLocked":false,"name":"a5af8d5c-0c2b-41dd-a089-ef57bcff560b","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
     {"$GMImageLayer":"","%Name":"c2755c49-9c9a-4e60-9a56-86ecec81ceed","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"c2755c49-9c9a-4e60-9a56-86ecec81ceed","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
-  "name":"spr_test_npc",
+  "name":"spr_beanboy_walk",
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"Sprites",
-    "path":"folders/Sprites.yy",
+    "name":"BeanBoy",
+    "path":"folders/Sprites/NPC_INTERACTABLES/NPCs/BeanBoy.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
   "resourceVersion":"2.0",
   "sequence":{
     "$GMSequence":"v1",
-    "%Name":"spr_test_npc",
+    "%Name":"spr_beanboy_walk",
     "autoRecord":true,
     "backdropHeight":768,
     "backdropImageOpacity":0.5,
@@ -59,7 +59,7 @@
       "resourceType":"KeyframeStore<MomentsEventKeyframe>",
       "resourceVersion":"2.0",
     },
-    "name":"spr_test_npc",
+    "name":"spr_beanboy_walk",
     "playback":1,
     "playbackSpeed":30.0,
     "playbackSpeedType":0,
@@ -71,10 +71,10 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"03f2eecd-8b15-4093-8c5f-cd057792702d","path":"sprites/spr_test_npc/spr_test_npc.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"03f2eecd-8b15-4093-8c5f-cd057792702d","path":"sprites/spr_beanboy_walk/spr_beanboy_walk.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"b62e4214-f858-440a-825a-98ac9200818f","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"de2213e9-0284-4d0f-84a6-86b758e1b7a0","path":"sprites/spr_test_npc/spr_test_npc.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"de2213e9-0284-4d0f-84a6-86b758e1b7a0","path":"sprites/spr_beanboy_walk/spr_beanboy_walk.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"5ee1a576-f7af-45fc-b1fe-e60286356de8","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
