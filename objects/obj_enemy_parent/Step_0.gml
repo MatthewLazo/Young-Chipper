@@ -1,24 +1,25 @@
 switch (state) 
 {
 	case enem_state.running:
-		if (path_position >= 1 or distance_to_point(move_target_x, move_target_y) < 1) 
+		image_blend=c_black
+		
+		if (path_position >= 1) 
 		{
 			alarm[1] = 200
 			state = enem_state.shooting
 		}
 		else 
 		{
+			show_debug_message(distance_to_point(move_target_x, move_target_y))
 			sprite_index = spr_move
-			direction_to_cover = mp_grid_path(global.mp_grid, path, x, y, move_target_x, move_target_y, false)
+			direction_to_cover = mp_grid_path(global.mp_grid, path, x, y, move_target_x, move_target_y, true)
 	
 			if (direction_to_cover) path_start(path, move_speed,path_action_stop,false)
-			move_towards_point(move_target_x, move_target_y, move_speed)
 		}
 		break;
 	case enem_state.shooting:
-		x=x
-		y=y
-		show_debug_message(alarm[1])
+		image_blend=c_orange
+
 		if (can_shoot) // Shoot
 		{
 			can_shoot = false
@@ -27,11 +28,8 @@ switch (state)
 		}
 		else sprite_index = spr_idle
 		break;
-	case enem_state.crouching:
-		x=x
-		y=y
-		break;
 	case enem_state.dead:
 		instance_destroy()
 		break;
 }
+show_debug_message(path_position)

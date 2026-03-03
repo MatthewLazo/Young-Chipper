@@ -10,3 +10,4 @@ mp_grid_add_instances(global.mp_grid, obj_obstacle, false)
 mp_grid_add_instances(global.mp_grid, obj_cover, false)
 
 
+show_debug_message(instance_number(obj_obstacle));

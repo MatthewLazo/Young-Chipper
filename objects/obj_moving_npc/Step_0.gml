@@ -18,7 +18,6 @@ switch (state)
 		}
 		break;
 	case npc_state.sitting:
-		show_debug_message("sitting")
 		sprite_index = spr_idle
 		x=x
 		y=y

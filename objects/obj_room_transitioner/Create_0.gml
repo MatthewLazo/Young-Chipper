@@ -1,1 +1,3 @@
-room_to = Room1
+room_to = Room2
+
+transition_id = ""

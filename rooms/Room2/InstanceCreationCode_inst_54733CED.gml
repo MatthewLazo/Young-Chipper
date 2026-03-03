@@ -1,0 +1,1 @@
+if (obj_room_manager.place_from == "from_outside_snake_town")place_player(125,250)

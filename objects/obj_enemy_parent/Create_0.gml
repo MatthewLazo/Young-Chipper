@@ -1,7 +1,6 @@
 enum enem_state {
 	shooting,
 	running,
-	crouching,
 	dead
 }
 
@@ -18,10 +17,12 @@ crouched = false;
 
 move_target_x = random_range(x - 10, x + 10)
 move_target_y = random_range(y - 10, y + 10)
-state = enem_state.running
+
 state_time = 200
 
 path = path_add()
+
+state = enem_state.running
 
 function shoot(pos_x, pos_y)
 {
@@ -40,7 +41,7 @@ function begin_sprint()
 	
 	image_blend=c_white
 	// Find nearest cover
-	direction_to_cover = mp_grid_path(global.mp_grid, path, x, y, move_target_x, move_target_y, false)
+	direction_to_cover = mp_grid_path(global.mp_grid, path, x, y, move_target_x, move_target_y, true)
 	if (direction_to_cover) path_start(path, move_speed,path_action_stop,false)
 	state = enem_state.running;
 }

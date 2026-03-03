@@ -9,8 +9,8 @@
   "name":"obj_game_manager",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"Perisistant",
+    "path":"folders/Objects/Perisistant.yy",
   },
   "parentObjectId":null,
   "persistent":true,

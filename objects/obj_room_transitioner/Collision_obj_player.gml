@@ -1,2 +1,1 @@
-
-room_goto(room_to)
+obj_room_manager.room_to(transition_id, room_to)
