@@ -1,3 +1,15 @@
-
-global.win = false
-global.spoken_to_evil = false
+global.flags = {
+	// LVL1
+	lvl1: 
+	{
+		main: 
+		{
+		
+		},
+		side: 
+		{
+			
+		}
+	}
+	// LVL2
+}

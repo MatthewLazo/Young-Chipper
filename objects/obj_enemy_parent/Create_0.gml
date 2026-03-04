@@ -11,9 +11,8 @@ can_shoot = true
 
 hp = max_hp
 
-can_damage = true
+immunity = false
 in_cover = false;
-crouched = false;
 
 move_target_x = random_range(x - 10, x + 10)
 move_target_y = random_range(y - 10, y + 10)
@@ -24,6 +23,19 @@ path = path_add()
 
 state = enem_state.running
 
+// Shake Effect
+shake = 0
+shake_duration = 0
+
+hit_shake_x = 0
+hit_shake_y = 0
+
+function do_shake(strength, duration)
+{
+	shake = strength
+	shake_duration = duration
+}
+
 function shoot(pos_x, pos_y)
 {
 	effect_create_depth(depth, ef_smokeup, x,y-20,0.01,c_orange)
@@ -32,6 +44,14 @@ function shoot(pos_x, pos_y)
 	bullet.direction = point_direction(bullet.x,bullet.y,pos_x,pos_y)
 	
 	if (obj_player.is_player_behind_cover()) bullet.aimed_at_cover=true
+}
+
+function take_damage(amount)
+{
+	immunity=true
+	alarm[2] = 10 // Immunity
+	effect_create_depth(depth, ef_flare, x,y-10, 1,c_red)
+	hp -= amount
 }
 
 function begin_sprint()

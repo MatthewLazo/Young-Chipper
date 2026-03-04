@@ -1,1 +1,1 @@
-can_damage=true
+immunity=false

@@ -14,7 +14,6 @@ place_to = room
 
 
 
-
 function room_to(transition_id, place_to_go)
 {
 	place_from = transition_id

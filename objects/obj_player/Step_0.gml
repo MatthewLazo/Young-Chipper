@@ -83,6 +83,20 @@ if (keyboard_check_pressed(vk_enter))
 }
 #endregion
 
+// SHAKE EFFECT
+if (shake > 0) 
+{
+	shake = lerp(shake, 0, 0.1)
+	
+	hit_shake_x = random_range(-shake, shake)
+	hit_shake_y = random_range(-shake, shake)
+}
+else
+{
+	hit_shake_x=0
+	hit_shake_y=0
+}
+
 with(all)
 {
 	depth = -bbox_bottom;

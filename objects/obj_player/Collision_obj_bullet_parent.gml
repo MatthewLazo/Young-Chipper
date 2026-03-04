@@ -1,6 +1,6 @@
 
 
-if (other.owner != id && can_damage)
+if (other.owner != id && not immunity)
 {
 	if (total_ammo <= 0)
 	{
@@ -9,9 +9,5 @@ if (other.owner != id && can_damage)
 		room_restart()
 	}
 	
-	can_damage=false
-	alarm[2] = 10
-	
-	total_ammo -= other.bullet_damage
-	effect_create_depth(depth, ef_spark, x,y-20,1,c_red)
+	take_damage(other.bullet_damage)
 }

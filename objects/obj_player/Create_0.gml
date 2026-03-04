@@ -7,7 +7,7 @@ cursor_sprite=spr_cursor
 // Stats
 total_hp = 1000
 hp = total_hp
-can_damage = true
+immunity = false
 move_speed = 1.5;
 
 // Movement
@@ -16,6 +16,7 @@ in_cover = false;
 
 // Shooting
 cocked = true;
+can_reload = true
 max_ammo = 6;
 total_ammo = max_ammo;
 
@@ -27,6 +28,20 @@ currently_talking = noone
 current_text = ""
 current_text_index = 0
 current_text_line = 0
+
+// Shake Effect
+shake = 0
+shake_duration = 0
+
+hit_shake_x = 0
+hit_shake_y = 0
+
+// Action
+function do_shake(strength, duration)
+{
+	shake = strength
+	shake_duration = duration
+}
 
 function shoot_bullet()
 {
@@ -44,7 +59,24 @@ function shoot_bullet()
 
 function reload()
 {
-	total_ammo = max_ammo
+	if (can_reload)
+	{
+		can_reload=false
+		total_ammo = max_ammo
+		alarm[1] = 240
+	}
 }
 
 function is_player_behind_cover() {return  crouching && in_cover}
+
+// HP
+
+function take_damage(amount)
+{
+	immunity = true
+	alarm[2] = 10
+	
+	total_ammo -= amount
+	effect_create_depth(depth, ef_spark, x,y-20,1,c_red)
+	do_shake(5,1)
+}

@@ -39,4 +39,17 @@ switch (state)
 		instance_destroy()
 		break;
 }
-show_debug_message(path_position)
+
+// SHAKE EFFECT
+if (shake > 0) 
+{
+	shake = lerp(shake, 0, 0.1)
+	
+	hit_shake_x = random_range(-shake, shake)
+	hit_shake_y = random_range(-shake, shake)
+}
+else
+{
+	hit_shake_x=0
+	hit_shake_y=0
+}
