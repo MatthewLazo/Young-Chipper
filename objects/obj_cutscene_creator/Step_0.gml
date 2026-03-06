@@ -25,6 +25,16 @@ switch (actions[action_index][0])
 	case "play_sound":
 		break;
 	case "wait":
+		if (not began_task)
+		{
+			began_task = true
+			actions[action_index][1]*=60;
+		}
+		actions[action_index][1]--;
+		if (actions[action_index][1] <= 0)
+		{
+			next_action()
+		}
 		break;
 	case "end":
 		actions = []
