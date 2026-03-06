@@ -1,4 +1,4 @@
-if (obj_ui_manager.currently_talking) 
+if (global.cutscene_active) 
 {
 	alarm[0] = random_range(180, 300)
 	state = npc_state.sitting

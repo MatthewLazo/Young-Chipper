@@ -17,10 +17,9 @@ switch (actions[action_index][0])
 		if (not began_task)
 		{
 			began_task=true
-			show_message(actions[action_index][1])
 			actions[action_index][1].begin_sprint(actions[action_index][3], actions[action_index][4], actions[action_index][2])
 		}
-		if (actions[action_index][1].distance_to_point(actions[action_index][3],actions[action_index][4]) < 1) next_action()
+		if (point_distance(actions[action_index][1].x, actions[action_index][1].y, actions[action_index][3],actions[action_index][4]) < 1) next_action()
 		
 		break;
 	case "play_sound":

@@ -1,4 +1,4 @@
-cutscene1 = [["talk", ["Hello there chipper!", "Ah as you must know... there are preparations in place set for the celebration of you!"]],["move", self, 10, 80, 116], ["end"]]
+cutscene1 = [["talk", ["Hello there chipper!", "Ah as you must know... there are preparations in place set for the celebration of you!"]],["move", self, 1, 80, 116], ["talk", ["This here is where the food stand will be.", "It's gon taste like poop but thats all okay if it's made with love.", "Lovely poop."]], ["end"]]
 
 current_cutscene = cutscene1
 spr_move = spr_beanboy_walk
