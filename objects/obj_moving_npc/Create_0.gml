@@ -1,33 +1,38 @@
-text = ["Don't talk to me, or else I'll kill you!", "Please? Don't talk to me."]
-text2 = ["You want a piece of me!"]
+cutscene1 = [["talk", ["Hello there chipper!", "Ah as you must know... there are preparations in place set for the celebration of you!"]],["move", self, 10, 80, 116], ["end"]]
 
-spr_walk = spr_beanboy_walk
-spr_idle = spr_beanboy_walk
+current_cutscene = cutscene1
+spr_move = spr_beanboy_walk
+spr_idle = spr_beanboy_idle
 
 enum npc_state {moving, sitting}
 
 state = npc_state.sitting
 
-move_speed = 1
+resume_as_normal = true
+
+norm_speed = 1
+move_speed = norm_speed
+
 path = path_add()
 move_target_x = xstart
 move_target_y = ystart
 alarm[0] =  random_range(180, 300)
 
-function return_text()
+function begin_cutscene()
 {
-	if (state == npc_state.moving) return false
-	else return text
+	resume_as_normal=false
+	obj_cutscene_creator.start_cutscene(current_cutscene)
 }
 function dialogue_end(dialogue)
 {
 	
 }
 
-function begin_sprint()
+function begin_sprint(place_x,place_y, speed_)
 {
-	move_target_x = random_range(xstart - 50, xstart + 50)
-	move_target_y = random_range(ystart - 50, ystart + 50)
+	move_speed = speed_
+	move_target_x = place_x
+	move_target_y = place_y
 	
 	image_blend=c_white
 	// Find nearest cover

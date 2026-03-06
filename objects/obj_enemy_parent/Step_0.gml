@@ -11,7 +11,6 @@ switch (state)
 		}
 		else 
 		{
-			show_debug_message(distance_to_point(move_target_x, move_target_y))
 			sprite_index = spr_move
 			direction_to_cover = mp_grid_path(global.mp_grid, path, x, y, move_target_x, move_target_y, true)
 	

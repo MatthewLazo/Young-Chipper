@@ -9,5 +9,3 @@ global.mp_grid = mp_grid_create(0,0,_w,_h,TS,TS) // Creates grid
 mp_grid_add_instances(global.mp_grid, obj_obstacle, false)
 mp_grid_add_instances(global.mp_grid, obj_cover, false)
 
-
-show_debug_message(instance_number(obj_obstacle));

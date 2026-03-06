@@ -5,8 +5,6 @@ cursor_sprite=spr_cursor
 
 
 // Stats
-total_hp = 1000
-hp = total_hp
 immunity = false
 move_speed = 1.5;
 
@@ -17,17 +15,13 @@ in_cover = false;
 // Shooting
 cocked = true;
 can_reload = true
-max_ammo = 6;
+max_ammo = 1000;
 total_ammo = max_ammo;
 
 // Menu
 menu_opened = false
 
 // Dialogue
-currently_talking = noone
-current_text = ""
-current_text_index = 0
-current_text_line = 0
 
 // Shake Effect
 shake = 0

@@ -1,19 +1,26 @@
 
+if (global.cutscene_active)
+{
+	hor_=0
+	ver_=0
+	return
+}
+
 #region Movement
 var hor_ = keyboard_check(ord("D")) -  keyboard_check(ord("A"));
 var ver_ = keyboard_check(ord("S")) -  keyboard_check(ord("W"));
 
-if (currently_talking or menu_opened) 
+if (menu_opened) // Prevents movement with menu opened
 {
 	hor_=0
 	ver_=0
 }
+
 move_and_collide(hor_*move_speed,ver_*move_speed, [obj_obstacle, obj_cover]) 
 
 if (keyboard_check_pressed(vk_shift))
 {
 	crouching = !crouching
-	show_debug_message(crouching)
 	if (crouching)
 	{ image_blend = c_grey 
 	  sprite_index=spr_player_crouch 
@@ -27,12 +34,12 @@ if (keyboard_check_pressed(vk_shift))
 #endregion
 
 #region Shooting
-if (keyboard_check_pressed(ord("P")) && not cocked)
+if (keyboard_check_pressed(ord("P")) or mouse_check_button_pressed(mb_right) && not cocked)
 {
 	cocked = true
 	effect_create_depth(depth, ef_spark, x,y-20,0.1,c_grey)
 }	
-if (keyboard_check_pressed(ord("O")) && cocked && not crouching)
+if (keyboard_check_pressed(ord("O")) or mouse_check_button_pressed(mb_left) && cocked && not crouching)
 {
 	cocked = false
 	shoot_bullet()
@@ -44,41 +51,19 @@ if (keyboard_check_pressed(ord("R")))
 #endregion
 
 #region Menu
-if (keyboard_check_pressed(ord("E")) and not currently_talking)
+if (keyboard_check_pressed(ord("E")))
 {
 	menu_opened = !menu_opened
 }
 
 #endregion
 #region Dialogue
-if (keyboard_check_pressed(vk_enter))
+if (keyboard_check_pressed(ord("I")))
 {
-	var who_is_here = instance_place(x,y, obj_interactable)
-	if (who_is_here ) 
+	var talk_to = instance_place(x,y,obj_interactable)
+	if (talk_to)
 	{
-		if (who_is_here.return_text() == false) return
-		
-		if (currently_talking)
-		{
-			if (current_text_line < array_length(currently_talking.return_text())-1)
-			{
-				current_text_line++;
-				current_text=currently_talking.return_text()[current_text_line]
-				current_text_index=0;
-			}
-			else
-			{
-				currently_talking.dialogue_end(currently_talking.return_text())
-				currently_talking=noone
-			}
-			current_text_index=0
-		}
-		else{
-			current_text_line=0
-			currently_talking=who_is_here
-			current_text=currently_talking.return_text()[0]
-			current_text_index=0
-		}
+		talk_to.begin_cutscene()
 	}
 }
 #endregion
