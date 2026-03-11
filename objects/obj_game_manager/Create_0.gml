@@ -4,7 +4,7 @@ global.flags = {
 	{
 		main: 
 		{
-		
+			rock_arguement: 0
 		},
 		side: 
 		{

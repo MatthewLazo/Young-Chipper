@@ -9,8 +9,8 @@
   "name":"obj_cover_zone",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"GameplayAssisters",
+    "path":"folders/Objects/GameplayAssisters.yy",
   },
   "parentObjectId":null,
   "persistent":false,

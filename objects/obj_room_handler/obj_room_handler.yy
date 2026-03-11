@@ -9,8 +9,8 @@
   "name":"obj_room_handler",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"NonPersistantSystems",
+    "path":"folders/Objects/NonPersistantSystems.yy",
   },
   "parentObjectId":null,
   "persistent":false,

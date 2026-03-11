@@ -13,9 +13,9 @@ crouching = false;
 in_cover = false;
 
 // Shooting
-cocked = true;
+cocked = false;
 can_reload = true
-max_ammo = 1000;
+max_ammo = 6;
 total_ammo = max_ammo;
 
 // Menu
@@ -43,7 +43,7 @@ function shoot_bullet()
 	{
 		total_ammo--;
 		effect_create_depth(depth, ef_smokeup, x,y-20,0.01,c_orange)
-		var bullet = instance_create_depth(x, y-20, depth, obj_bullet_parent)
+		var bullet = instance_create_depth(x, y-10, depth, obj_bullet_parent)
 		bullet.bullet_speed = 1;
 		bullet.owner = id
 		bullet.direction = point_direction(bullet.x, bullet.y, mouse_x, mouse_y)
@@ -73,4 +73,5 @@ function take_damage(amount)
 	total_ammo -= amount
 	effect_create_depth(depth, ef_spark, x,y-20,1,c_red)
 	do_shake(5,1)
+	obj_audio_manager.play_sound_at(hit, x,y, 1)
 }

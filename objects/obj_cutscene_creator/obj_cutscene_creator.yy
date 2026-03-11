@@ -9,8 +9,8 @@
   "name":"obj_cutscene_creator",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"NonPersistantSystems",
+    "path":"folders/Objects/NonPersistantSystems.yy",
   },
   "parentObjectId":null,
   "persistent":true,

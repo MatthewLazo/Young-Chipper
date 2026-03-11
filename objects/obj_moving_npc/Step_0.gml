@@ -10,7 +10,7 @@ switch (state)
 		}
 		else
 		{
-			if (!global.cutscene_active) sprite_index = spr_move
+			if (sprite_index != spr_move) sprite_index = spr_move
 			direction_to_cover = mp_grid_path(global.mp_grid, path, x, y, move_target_x, move_target_y, false)
 	
 			if (direction_to_cover) path_start(path, move_speed,path_action_stop,false)
@@ -24,8 +24,11 @@ switch (state)
 			alarm[0] = random_range(180, 300)
 		}
 		
-		if (!global.cutscene_active) sprite_index = spr_idle
-		
+		if (cutscene_animation_playing)
+		{
+			if (image_index >= image_number) cutscene_animation_playing=false
+		}
+		else sprite_index = spr_idle
 		x=x
 		y=y
 		break;

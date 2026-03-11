@@ -1,9 +1,10 @@
 
 
-text = [
+cutscene1 = [
 "Hi"]
 
-function return_text()
+current_cutscene = cutscene1
+function begin_cutscene()
 {
-	return text
+	obj_cutscene_creator.start_cutscene(current_cutscene)
 }

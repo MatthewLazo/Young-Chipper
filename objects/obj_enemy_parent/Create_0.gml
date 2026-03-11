@@ -11,7 +11,8 @@ can_shoot = true
 
 hp = max_hp
 
-immunity = false
+immunity = false;
+did_dead = false;
 in_cover = false;
 
 move_target_x = random_range(x - 10, x + 10)
@@ -52,6 +53,7 @@ function take_damage(amount)
 	alarm[2] = 10 // Immunity
 	effect_create_depth(depth, ef_flare, x,y-10, 1,c_red)
 	hp -= amount
+	obj_audio_manager.play_sound_at(hit, x,y, 1)
 }
 
 function begin_sprint()

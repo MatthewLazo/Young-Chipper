@@ -6,6 +6,31 @@ current_text = ""
 current_text_index = 0
 current_text_line = 0
 
+enum fade_state {
+	fade_in,
+	idle,
+	fade_out
+}
+
+state = fade_state.fade_out
+
+fade_alpha = 1
+fade_color = c_black
+fade_speed = 0.05
+
+function fade_in(color)
+{
+	fade_alpha = 0
+	fade_color=color
+	state =fade_state.fade_in
+}
+function fade_out(color)
+{
+	fade_alpha = 1
+	fade_color=color
+	state =fade_state.fade_out
+}
+
 function start_dialogue(with_)
 {
 	if (array_length(with_) > 0)

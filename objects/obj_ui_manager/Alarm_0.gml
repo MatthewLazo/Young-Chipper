@@ -1,0 +1,1 @@
+obj_audio_manager.play_sound(Type, 1)

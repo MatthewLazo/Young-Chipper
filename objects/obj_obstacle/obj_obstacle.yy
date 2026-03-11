@@ -6,8 +6,8 @@
   "name":"obj_obstacle",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"GameplayAssisters",
+    "path":"folders/Objects/GameplayAssisters.yy",
   },
   "parentObjectId":null,
   "persistent":false,

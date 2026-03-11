@@ -16,6 +16,21 @@ if (menu_opened) // Prevents movement with menu opened
 	ver_=0
 }
 
+// Animations
+if (hor_ == 0 and ver_ == 0) sprite_index = spr_player_idle
+else {
+	// Flipping Sprite
+	if (hor_ > 0)
+	{
+		image_xscale=1
+	}
+	else if (hor_ < 0)
+	{
+		image_xscale=-1
+	}
+	sprite_index = spr_player_move
+}
+
 move_and_collide(hor_*move_speed,ver_*move_speed, [obj_obstacle, obj_cover]) 
 
 if (keyboard_check_pressed(vk_shift))
@@ -23,12 +38,11 @@ if (keyboard_check_pressed(vk_shift))
 	crouching = !crouching
 	if (crouching)
 	{ image_blend = c_grey 
-	  sprite_index=spr_player_crouch 
 	}
 	else 
 	{
 	 image_blend = c_white 
-	 sprite_index=spr_player_stand
+	 sprite_index=spr_player_idle
 	}	
 }
 #endregion
@@ -37,11 +51,13 @@ if (keyboard_check_pressed(vk_shift))
 if (keyboard_check_pressed(ord("P")) or mouse_check_button_pressed(mb_right) && not cocked)
 {
 	cocked = true
+	obj_audio_manager.play_sound(relovercock, 1)
 	effect_create_depth(depth, ef_spark, x,y-20,0.1,c_grey)
 }	
-if (keyboard_check_pressed(ord("O")) or mouse_check_button_pressed(mb_left) && cocked && not crouching)
+if ((keyboard_check_pressed(ord("O")) or mouse_check_button_pressed(mb_left)) && cocked && not crouching)
 {
 	cocked = false
+	obj_audio_manager.play_sound(gunshot, 1)
 	shoot_bullet()
 }
 if (keyboard_check_pressed(ord("R")))

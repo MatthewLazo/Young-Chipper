@@ -37,8 +37,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_player_stand",
-    "path":"sprites/spr_player_stand/spr_player_stand.yy",
+    "name":"spr_player_move",
+    "path":"sprites/spr_player_move/spr_player_move.yy",
   },
   "spriteMaskId":null,
   "visible":true,

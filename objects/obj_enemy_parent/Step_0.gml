@@ -35,6 +35,7 @@ switch (state)
 		else sprite_index = spr_idle
 		break;
 	case enem_state.dead:
+		obj_audio_manager.play_sound_at(death, x,y, 1)
 		instance_destroy()
 		break;
 }
