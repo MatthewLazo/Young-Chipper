@@ -1,4 +1,5 @@
-
+if (!currently_talking)
+{
 	// Ammo hud
 	#region Ammo
 	draw_set_halign(fa_middle);
@@ -6,12 +7,11 @@
 	
 	if (obj_player.total_ammo == 0) draw_set_colour(c_red)
 	else draw_set_colour(c_white)
-	var ammo_text_x = 150;
-	var ammo_text_y = window_get_height();
+	var ammo_text_x = 100;
+	var ammo_text_y = window_get_height() - 50;
 
 	draw_text_transformed(ammo_text_x, ammo_text_y, string(obj_player.total_ammo), 2, 2, 0);
-	draw_text_transformed(ammo_text_x, ammo_text_y + 100, string(max(obj_player.alarm[1]/60, 0)), 2, 2, 0)
-	draw_sprite_stretched(spr_ui_bullet, -1, 50, window_get_height(), 100, 130);
+	draw_text_transformed(ammo_text_x, ammo_text_y - 50, string(max(obj_player.alarm[1]/60, 0)), 1, 1, 0)
 	
 	
 	draw_set_halign(fa_left);
@@ -36,7 +36,7 @@
 		draw_set_valign(fa_top);
 	}
 	#endregion
-	
+}
 // fADING
 draw_set_alpha(fade_alpha)
 draw_set_colour(fade_color)
@@ -54,11 +54,11 @@ if (currently_talking)
 	draw_set_colour(c_orange)
 	//draw_rectangle(x1,y1,x2,y2, false)
 	
-	draw_set_colour(c_maroon)
 	var text_x = x1 + 32;
 	var text_y = y1 + 32;
 	
-	draw_text_ext(text_x,text_y,  string_copy(current_text, 1, current_text_index), 50, window_get_width() + 500)
+	draw_set_colour(c_orange)
+	draw_text_ext(text_x,text_y,  string_copy(current_text, 1, current_text_index), 50, window_get_width()-50)
 	current_text_index++;
 	if (current_text_index < string_length(current_text) and alarm[0] < 0) alarm[0] = 2
 }
