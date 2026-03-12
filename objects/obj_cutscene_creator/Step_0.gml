@@ -42,6 +42,14 @@ switch (actions[action_index][0])
 		}
 		
 		break;
+	case "move_camera":
+		if (not began_task)
+		{
+			began_task = true
+			obj_camera_controller.move_to(actions[action_index][2], actions[action_index][3], actions[action_index][1])
+		}
+		if (obj_camera_controller.reached_position) next_action()
+		break
 	case "play_sound":
 		obj_audio_manager.play_sound(actions[action_index][1], 1)
 		next_action()
@@ -83,7 +91,28 @@ switch (actions[action_index][0])
 		container[$key] = value_to
 		next_action()
 		break;
-		
+	case "fade_in":
+		if (not began_task)
+		{
+			began_task=true
+			obj_ui_manager.fade_in(actions[action_index][1])
+		}
+		if (obj_ui_manager.fade_alpha >= 1)
+		{
+			next_action()
+		}
+		break;
+	case "fade_out":
+		if (not began_task)
+		{
+			began_task=true
+			obj_ui_manager.fade_out(actions[action_index][1])
+		}
+		if (obj_ui_manager.fade_alpha <= 0)
+		{
+			next_action()
+		}
+		break;
 }
 
 

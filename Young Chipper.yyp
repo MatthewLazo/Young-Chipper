@@ -43,6 +43,7 @@
     {"id":{"name":"GameFont","path":"fonts/GameFont/GameFont.yy",},},
     {"id":{"name":"obj_audio_manager","path":"objects/obj_audio_manager/obj_audio_manager.yy",},},
     {"id":{"name":"obj_bullet_parent","path":"objects/obj_bullet_parent/obj_bullet_parent.yy",},},
+    {"id":{"name":"obj_camera_controller","path":"objects/obj_camera_controller/obj_camera_controller.yy",},},
     {"id":{"name":"obj_cover_zone","path":"objects/obj_cover_zone/obj_cover_zone.yy",},},
     {"id":{"name":"obj_cover","path":"objects/obj_cover/obj_cover.yy",},},
     {"id":{"name":"obj_cutscene_creator","path":"objects/obj_cutscene_creator/obj_cutscene_creator.yy",},},

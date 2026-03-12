@@ -15,7 +15,7 @@ in_cover = false;
 // Shooting
 cocked = false;
 can_reload = true
-max_ammo = 6;
+max_ammo = 100;
 total_ammo = max_ammo;
 
 // Menu
@@ -43,10 +43,15 @@ function shoot_bullet()
 	{
 		total_ammo--;
 		effect_create_depth(depth, ef_smokeup, x,y-20,0.01,c_orange)
-		var bullet = instance_create_depth(x, y-10, depth, obj_bullet_parent)
+		
+		mouse_dir = point_direction(x, y-10, mouse_x, mouse_y)
+		mx = x+lengthdir_x(0, mouse_dir)
+		my = y+lengthdir_y(0, mouse_dir)
+		
+		var bullet = instance_create_depth(mx, my-10, depth, obj_bullet_parent)
+		bullet.direction = mouse_dir
 		bullet.bullet_speed = 1;
 		bullet.owner = id
-		bullet.direction = point_direction(bullet.x, bullet.y, mouse_x, mouse_y)
 		if (!in_cover) bullet.aimed_at_cover=true
 	}
 }
