@@ -4,7 +4,8 @@ global.flags = {
 	{
 		main: 
 		{
-			rock_arguement: 0
+			rock_arguement: 0,
+			carriage_man: 0
 		},
 		side: 
 		{
@@ -12,4 +13,12 @@ global.flags = {
 		}
 	}
 	// LVL2
+}
+
+global.to_do = ""
+global.play_time = 1
+
+function set_game_objective()
+{
+	
 }

@@ -9,7 +9,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"NPCS_INTERACTABLES",
-    "path":"folders/Objects/NPCS_INTERACTABLES.yy",
+    "path":"folders/Entities/NPCS_INTERACTABLES.yy",
   },
   "parentObjectId":null,
   "persistent":false,

@@ -21,19 +21,30 @@ if (!currently_talking)
 	#region Menu
 	if (obj_player.menu_opened)
 	{
-		draw_set_halign(fa_middle);
+		draw_set_halign(fa_left);
 		draw_set_valign(fa_center);
 	
-		var menu_x1 = 120;
+		var menu_x1 = 50;
 		var menu_y1 = 10;
-		var menu_x2 = window_get_width;
-		var menu_y2 = 200;
+		var menu_x2 = 500;
+		var menu_y2 = 400;
 	
-		draw_set_colour(c_white)
+		draw_set_colour(c_orange)
 		draw_rectangle(menu_x1,menu_y1,menu_x2,menu_y2, false)
+		
+		draw_set_colour(c_black)
+		draw_set_halign(fa_center);
 	
+		draw_text_transformed((menu_x1 + menu_x2)/2, menu_y1+20, "To Do: ", 1, 1, 0);
+		
+		
 		draw_set_halign(fa_left);
 		draw_set_valign(fa_top);
+		
+		global.to_do = keyboard_string + "|"
+		draw_text_ext(menu_x1, menu_y1+55, global.to_do, 50, 450);
+		
+		
 	}
 	#endregion
 }
@@ -55,9 +66,9 @@ if (currently_talking)
 	//draw_rectangle(x1,y1,x2,y2, false)
 	
 	var text_x = x1 + 32;
-	var text_y = y1 + 32;
+	var text_y = y1 + 50;
 	
-	draw_set_colour(c_orange)
+	draw_set_colour(c_white)
 	draw_text_ext(text_x,text_y,  string_copy(current_text, 1, current_text_index), 50, window_get_width()-50)
 	current_text_index++;
 	if (current_text_index < string_length(current_text) and alarm[0] < 0) alarm[0] = 2

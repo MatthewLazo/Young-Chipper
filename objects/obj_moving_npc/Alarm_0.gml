@@ -1,4 +1,5 @@
-if (global.cutscene_active) 
+if (state == npc_state.dead) return
+if (global.cutscene_active or not moveable) 
 {
 	alarm[0] = random_range(180, 300)
 	state = npc_state.sitting

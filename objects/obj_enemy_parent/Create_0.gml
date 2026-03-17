@@ -1,6 +1,7 @@
 enum enem_state {
 	shooting,
 	running,
+	sitting,
 	dead
 }
 
@@ -18,11 +19,11 @@ in_cover = false;
 move_target_x = random_range(x - 10, x + 10)
 move_target_y = random_range(y - 10, y + 10)
 
-state_time = 200
+state_time = 50
 
 path = path_add()
 
-state = enem_state.running
+state = enem_state.sitting
 
 // Shake Effect
 shake = 0
@@ -31,6 +32,7 @@ shake_duration = 0
 hit_shake_x = 0
 hit_shake_y = 0
 
+alarm[1] = 30
 function do_shake(strength, duration)
 {
 	shake = strength

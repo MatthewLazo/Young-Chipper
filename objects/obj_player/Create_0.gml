@@ -15,7 +15,7 @@ in_cover = false;
 // Shooting
 cocked = false;
 can_reload = true
-max_ammo = 100;
+max_ammo = 6;
 total_ammo = max_ammo;
 
 // Menu

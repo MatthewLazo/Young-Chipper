@@ -20,7 +20,6 @@ switch (state)
 		
 		if (point_distance(camera_get_view_x(camera), camera_get_view_y(camera), target_x, target_y) < 1)
 		{
-			show_debug_message("here")
 			reached_position=true
 			state = cam_state.idle
 		}

@@ -50,6 +50,10 @@ switch (actions[action_index][0])
 		}
 		if (obj_camera_controller.reached_position) next_action()
 		break
+	case "room_to":
+		obj_room_manager.room_to(actions[action_index][2], actions[action_index][1])
+		next_action()
+		break
 	case "play_sound":
 		obj_audio_manager.play_sound(actions[action_index][1], 1)
 		next_action()
@@ -71,6 +75,14 @@ switch (actions[action_index][0])
 			next_action()
 		}
 		break;
+	case "spawn_enemy":
+		if (not began_task)
+		{
+			began_task = true
+			obj_room_handler.spawn_enemy(actions[action_index][1],actions[action_index][2])
+		}
+		next_action()
+		break;
 	case "end":
 		actions = []
 		action_index=0
@@ -89,13 +101,15 @@ switch (actions[action_index][0])
 		var key = actions[action_index][2]
 		var value_to =  actions[action_index][3]
 		container[$key] = value_to
+		obj_game_manager.set_game_objective()
+		
 		next_action()
 		break;
 	case "fade_in":
 		if (not began_task)
 		{
 			began_task=true
-			obj_ui_manager.fade_in(actions[action_index][1])
+			obj_ui_manager.fade_in(actions[action_index][1], actions[action_index][2])
 		}
 		if (obj_ui_manager.fade_alpha >= 1)
 		{
@@ -106,7 +120,7 @@ switch (actions[action_index][0])
 		if (not began_task)
 		{
 			began_task=true
-			obj_ui_manager.fade_out(actions[action_index][1])
+			obj_ui_manager.fade_out(actions[action_index][1], actions[action_index][2])
 		}
 		if (obj_ui_manager.fade_alpha <= 0)
 		{

@@ -27,8 +27,8 @@
   "nineSlice":null,
   "origin":7,
   "parent":{
-    "name":"BeanBoy",
-    "path":"folders/Sprites/NPC_INTERACTABLES/NPCs/BeanBoy.yy",
+    "name":"BBSprites",
+    "path":"folders/Entities/NPCS_INTERACTABLES/Lvl1/Balloon Boy/BBSprites.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

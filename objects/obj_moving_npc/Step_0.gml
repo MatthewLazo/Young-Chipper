@@ -32,4 +32,7 @@ switch (state)
 		x=x
 		y=y
 		break;
+	case npc_state.dead:
+		sprite_index=spr_dead
+		break;
 }

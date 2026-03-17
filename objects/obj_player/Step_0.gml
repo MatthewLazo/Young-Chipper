@@ -65,10 +65,12 @@ if (keyboard_check_pressed(ord("R")))
 	reload()
 }
 #endregion
-
 #region Menu
-if (keyboard_check_pressed(ord("E")))
+if (keyboard_check_pressed(vk_escape))
 {
+	keyboard_string=""
+	if (string_length(global.to_do) > 0 and menu_opened) global.to_do = string_delete(global.to_do, string_length(global.to_do), 1)
+	keyboard_string = global.to_do
 	menu_opened = !menu_opened
 }
 
@@ -96,9 +98,4 @@ else
 {
 	hit_shake_x=0
 	hit_shake_y=0
-}
-
-with(all)
-{
-	depth = -bbox_bottom;
 }

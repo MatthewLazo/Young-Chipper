@@ -1,16 +1,20 @@
 
+dead_cutscene = [["talk", ["..."]], ["end"]]
+
 npc_id = ""
 is_npc = true
 
 spr_move = spr_beanboy_walk
 spr_idle = spr_beanboy_idle
+spr_dead = spr_beanboy_dead
 
-enum npc_state {moving, sitting}
+enum npc_state {moving, sitting, dead}
 
 state = npc_state.sitting
 
 resume_as_normal = true
 
+moveable = true
 norm_speed = 1
 move_speed = norm_speed
 
@@ -33,20 +37,20 @@ function play_anim(anim)
 	sprite_index = anim
 }
 
-function cutscene_check()
+function die()
 {
-	
+	upon_death()
+	state = npc_state.dead
+	moveable = false
 }
+
+// Create code
+
 function begin_cutscene()
 {
 	cutscene_check()
 	resume_as_normal=false
 	obj_cutscene_creator.start_cutscene(current_cutscene)
-}
-
-function dialogue_end(dialogue)
-{
-	
 }
 
 function begin_sprint(place_x,place_y, speed_)

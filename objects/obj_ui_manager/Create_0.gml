@@ -18,16 +18,18 @@ fade_alpha = 1
 fade_color = c_black
 fade_speed = 0.05
 
-function fade_in(color)
+function fade_in(color, speed_)
 {
 	fade_alpha = 0
 	fade_color=color
+	fade_speed=speed_
 	state =fade_state.fade_in
 }
-function fade_out(color)
+function fade_out(color, speed_)
 {
 	fade_alpha = 1
 	fade_color=color
+	fade_speed=speed_
 	state =fade_state.fade_out
 }
 
